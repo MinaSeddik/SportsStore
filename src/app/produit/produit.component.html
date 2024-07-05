@@ -1,0 +1,12 @@
+<div class="row text-white m-2">
+  <div class="col-4 p-2 bg-success">
+    <app-form-de-produits (prdduitNiveau)="handleNewProduct($event)"></app-form-de-produits>
+  </div>
+  <div class="col-8 p-2 bg-primary">
+
+    <app-toggle-view>
+      <app-table-de-produits [model]="model"></app-table-de-produits>
+    </app-toggle-view>
+
+  </div>
+</div>

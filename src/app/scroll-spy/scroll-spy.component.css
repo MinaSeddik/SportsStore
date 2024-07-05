@@ -1,0 +1,49 @@
+.mynav {
+  position: sticky;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #CCC;
+  padding-top: 10px;
+  /*border: 1px solid red;*/
+  /*margin-top: 20px;*/
+  background-color: #6dcbc8;
+  /*opacity: 0.5;*/
+}
+
+.mynav ul {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.mynav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+}
+
+
+.mynav ul li a:hover{
+  color: #CCC;
+}
+
+.mynav ul li a.active {
+  background-color: red;
+  /*opacity: 1;*/
+  border: 1px solid #CCCCCC;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<h2> Model-Based Forms (Reactive Forms) Better version</h2>
+<div class="m-2">
+  <div class="bg-info text-white mb-2 p-2">Model Data: {{ jsonProduct }}</div>
+
+  <!--    novalidate: not to use the browser native validation feature -->
+  <form class="m-2" novalidate [formGroup]="form" (ngSubmit)="submitFormReactive(form)">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" name="name" [(ngModel)]="newProduct.name" formControlName="name"/>
+      <ul class="text-danger list-unstyled"
+          *ngIf="form.get('name').invalid && (form.get('name').dirty || form.get('name').touched)">
+        <div *ngIf="form.get('name').errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="form.get('name').errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+      </ul>
+    </div>
+
+
+    <div class="form-group">
+      <label>Category</label>
+      <input class="form-control" name="category" [(ngModel)]="newProduct.category" formControlName="category"/>
+      <ul class="text-danger list-unstyled"
+          *ngIf="form.get('category').invalid && (form.get('category').dirty || form.get('category').touched)">
+        <div *ngIf="form.get('category').errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="form.get('category').errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+      </ul>
+    </div>
+
+
+    <div class="form-group">
+      <label>Price</label>
+      <input class="form-control" name="price" [(ngModel)]="newProduct.price" formControlName="price"/>
+      <ul class="text-danger list-unstyled"
+          *ngIf="form.get('price').invalid && (form.get('price').dirty || form.get('price').touched)">
+        <div *ngIf="form.get('price').errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="form.get('price').errors.limit">
+          error in limit
+        </div>
+      </ul>
+    </div>
+
+
+    <!--    <button class="btn btn-primary" (click)="addProduct(newProduct)">Create</button>-->
+    <button class="btn btn-primary" type="submit"
+            [disabled]="form.invalid"
+            [class.btn-secondary]="form.invalid">Create
+    </button>
+  </form>
+
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+

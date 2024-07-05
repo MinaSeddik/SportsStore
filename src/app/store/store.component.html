@@ -1,0 +1,110 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col bg-dark text-white">
+      <a class="navbar-brand">SPORTS STORE (store component) </a>
+      <cart-summary></cart-summary>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 p-2">
+      <div class="d-grid gap-2">
+        <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">
+          Home
+        </button>
+        <button *ngFor="let cat of categories" class="btn btn-outline-primary btn-block"
+                [class.active]="cat === selectedCategory" (click)="changeCategory(cat)">
+          {{ cat }}
+        </button>
+        <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">
+          Admin
+        </button>
+
+        <hr/>
+
+        <button class="btn btn-block btn-info m-t-3" routerLink="/regular-html-validation">
+          Form Validation - Regular HTML5
+        </button>
+        <button class="btn btn-block btn-info m-t-3" routerLink="/template-driven-validation">
+          Form Validation - Template Driven Forms
+        </button>
+        <button class="btn btn-block btn-info m-t-3" routerLink="/reactive-validation">
+          Form Validation - Model Based Forms (Reactive Forms)
+        </button>
+        <button class="btn btn-block btn-info m-t-3" routerLink="/reactive-validation2">
+          Form Validation - Model Based Forms (Reactive Forms) Better version
+        </button>
+
+        <hr/>
+
+        <button class="btn btn-block btn-warning m-t-3" routerLink="/products">
+          Products
+        </button>
+        <button class="btn btn-block btn-warning m-t-3" routerLink="/produits">
+          Produits
+        </button>
+        <button class="btn btn-block btn-warning m-t-3" routerLink="/my-products">
+        My Products
+        </button>
+
+        <hr/>
+
+        <button class="btn btn-block btn-success m-t-3" routerLink="/view-child">
+          View Child / InputField focus / Navigate to specific Element
+        </button>
+        <button class="btn btn-block btn-success m-t-3" routerLink="/show-spinner">
+          Show Spinner
+        </button>
+        <button class="btn btn-block btn-success m-t-3" routerLink="/scroll-spy">
+          ScrollSpy
+        </button>
+
+        <br/>
+        <br/>
+        <br/>
+      </div>
+    </div>
+    <div class="col-9 p-2">
+      <div *ngFor="let product of products" class="card m-1 p-1 bg-light ">
+        <h4>
+          {{ product.name }}
+          <span class="badge badge-pill badge-primary text-primary float-end">
+            {{ product.price | currency:"USD":"symbol":"2.2-2" }}
+         </span>
+        </h4>
+        <div class="card-text bg-white p-1">{{ product.description }}
+          <button class="btn btn-success btn-sm float-end" (click)="addProductToCart(product)">
+            Add To Cart
+          </button>
+        </div>
+      </div>
+
+      <!--      Add Pagination-->
+
+      <div class="form-inline float-end me-1">
+        <select class="form-control" [value]="productsPerPage" (change)="changePageSize($any($event.target).value)">
+          <option value="3">3 per Page</option>
+          <option value="4">4 per Page</option>
+          <option value="6">6 per Page</option>
+          <option value="8">8 per Page</option>
+        </select>
+      </div>
+      <div class="btn-group float-start">
+        <button *ngFor="let page of pageNumbers" (click)="changePage(page)"
+                class="btn btn-outline-primary" [class.active]="page === selectedPage">
+          {{page}}
+        </button>
+      </div>
+
+<!--      <div class="btn-group float-start">-->
+<!--        <button *counter="let page of pageCount" (click)="changePage(page)"-->
+<!--                class="btn btn-outline-primary" [class.active]="page == selectedPage">-->
+<!--          {{page}}-->
+<!--        </button>-->
+<!--      </div>-->
+
+
+    </div>
+  </div>
+</div>

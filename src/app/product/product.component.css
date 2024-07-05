@@ -1,0 +1,25 @@
+input.ng-dirty.ng-invalid {
+  border: 2px solid #ff0000
+}
+
+input.ng-dirty.ng-valid {
+  border: 2px solid #6bc502
+}
+
+
+.box1 {
+  width: auto;
+  height: auto;
+  border: 1px solid red;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.span1 {
+  color: red;
+}
+
+.span2 {
+  color: yellow;
+}

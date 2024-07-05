@@ -1,0 +1,50 @@
+<div class="row m-2">
+  <div class="col-8 p-2">
+
+
+    <h4>Two-way Binding inside the same Component</h4>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by Product"
+             aria-label="Search by Product" aria-describedby="basic-addon1"
+      [(ngModel)]="filterTerm">
+      <span class="input-group-text" id="basic-addon1"> <i class="fa fa-search"></i>
+      </span>
+    </div>
+    Search Keyword: {{filterTerm}}
+
+    <br> <br>
+    <hr/>
+    <br/>
+
+    <h4>Two-way Binding Parent-Child Component using Input/Output</h4>
+<!--    <app-my-filter [myFilter]="searchTerm" (myFilterChange)="searchTerm=$any($event)"></app-my-filter>-->
+    <app-my-filter [(myFilter)]="searchTerm"></app-my-filter>
+    <br>
+    Search Keyword: {{searchTerm}}
+
+
+    <br> <br>
+    <hr/>
+    <br/>
+
+    <h4>Two-way Binding Parent-Child Component using modal</h4>
+<!--        <app-my-filter2 [myFilter2]="searchTerm2()" (myFilter2Change)="searchTerm2.set($any($event))"></app-my-filter2>-->
+    <app-my-filter2 [(myFilter2)]="searchTerm2"></app-my-filter2>
+    <br>
+    Search Keyword: {{searchTerm2()}}
+
+    <br> <br>
+    <hr/>
+    <br/>
+
+    <app-mytable [searchProduct]="searchTerm2()" [(state)]="state"></app-mytable>
+  </div>
+  <div class="col-4 p-2">
+    <app-myform [state]="state()"></app-myform>
+  </div>
+</div>
+
+<br> <br>
+<br> <br>
+<br> <br>
+<br> <br>

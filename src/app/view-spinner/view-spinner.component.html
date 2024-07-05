@@ -1,0 +1,9 @@
+@if (isLoading()) {
+  <app-spinner></app-spinner>
+}
+
+  <div style="width: 100%; word-wrap: break-word;">
+    <button class="btn btn-info" (click)="reloadData()">Reload data</button>
+    {{ someData }}
+  </div>
+

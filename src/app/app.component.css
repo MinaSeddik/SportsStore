@@ -1,0 +1,9 @@
+.footer {
+  /*background-color: purple !important;*/
+  bottom: 0;
+  right: 10px;
+  left: 10px;
+  position: fixed;
+  /*width: 100%;*/
+}
+

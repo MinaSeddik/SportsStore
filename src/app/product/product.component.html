@@ -1,0 +1,167 @@
+<div class="row m-2">
+  <div class="col-6">
+    <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+      <div class="form-group" *ngFor="let control of form.productControls">
+        <label>{{ control.label }}</label>
+        <input class="form-control"
+
+               name="{{control.modelProperty}}"
+               formControlName="{{control.modelProperty}}"/>
+        <ul class="text-danger list-unstyled"
+            *ngIf="(formSubmitted || control.dirty) && control.invalid">
+          <li *ngFor="let error of control.getValidationMessages()">
+            {{ error }}
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-primary" type="submit"
+              [disabled]="formSubmitted && !form.valid"
+              [class.btn-secondary]="formSubmitted && form.invalid">
+        Create
+      </button>
+    </form>
+
+    <br/> <br/> <br/>
+    <div class="form-group bg-info text-white p-2">
+      <label>Name:</label>
+      <input class="bg-primary text-white" [paModel]="newProduct.name"
+             (paModelChange)="newProduct.name=$event"/>
+    </div>
+    <br/>
+    <div class="form-group bg-info text-white p-2">
+      <label>Name:</label>
+      <input class="bg-primary text-white" [(paModel)]="newProduct.name"/>
+    </div>
+
+    <br/>
+
+    <div class="form-group bg-info text-white p-2">
+      <label>Name:</label>
+      <input class="bg-primary text-white" [(paModel)]="newProduct.name"
+             #paModel="paModel"/>
+      <div class="bg-primary text-white">Direction: {{ paModel.direction }}</div>
+    </div>
+
+    <br/>
+    <br/>
+    <p appTest>Received Data (Directive appTest): {{ receivedDataCategory }}</p>
+    <br/>
+    <p appTest2>Received Data (Directive appTest2): {{ receivedDataCategory }}</p>
+    <br/>
+    <input appProp (action)="handleAction($event)" type="text" [(ngModel)]="boxData"/>
+    <p>{{ message }}</p>
+
+
+  </div>
+  <div class="col-6">
+    <span class="alert alert-info">Received Data: {{ receivedDataCategory }}</span>
+    <br>
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of getProducts(); let i = index"
+          [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+          [pa-product]="item"
+          (pa-category)="receivedDataCategory=$event">
+
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+
+        <!--          <td pa-attr="bg-warning">{{item.category}}</td>-->
+        <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+          {{ item.category }}
+        </td>
+
+        <!--          <td pa-attr="bg-info">{{item.price}}</td>-->
+        <td [pa-attr]="'bg-info'">{{ item.price }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="m-2">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="showTable"/>
+        Show Table
+      </label>
+    </div>
+    <ng-template [paIf]="showTable">
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-template [paForOf]="getProducts()" let-item let-i="index"
+                     let-odd="odd" let-even="even">
+          <tr [class.bg-info]="odd" [class.bg-warning]="even">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.price }}</td>
+          </tr>
+        </ng-template>
+        </tbody>
+      </table>
+    </ng-template>
+    <br/> <br/>
+    <br/> <br/>
+    <table *paIf="showTable" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+      <th></th><th>Name</th><th>Category</th><th>Price</th><th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *paFor="let item of getProducts(); let i = index; let odd = odd;
+          let even = even" [class.bg-info]="odd" [class.bg-warning]="even"
+          [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+          [pa-product]="item"
+          (pa-category)="receivedDataCategory=$event"
+          >
+
+        <td style="vertical-align:middle">{{i + 1}}</td>
+        <td style="vertical-align:middle">{{item.name}}</td>
+
+        <!--          <td pa-attr="bg-warning">{{item.category}}</td>-->
+        <td style="vertical-align:middle" [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+          {{ item.category }}
+        </td>
+
+        <!--          <td pa-attr="bg-info">{{item.price}}</td>-->
+        <td style="vertical-align:middle" [pa-attr]="'bg-info'">{{ item.price }}</td>
+
+
+        <td class="text-center">
+          <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">
+            Delete
+          </button>
+        </td>
+
+
+
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <br/> <br/>
+  <br/> <br/>
+  <br/> <br/>
+  <br/> <br/>
+
+</div>

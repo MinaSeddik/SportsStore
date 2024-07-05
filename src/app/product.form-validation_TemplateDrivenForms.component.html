@@ -1,0 +1,72 @@
+<!--  ng-untouched ng-touched-->
+<!--  ng-pristine ng-dirty -->
+<!--  ng-valid ng-invalid-->
+<h2> Template Driven Forms </h2>
+<div class="m-2">
+  <div class="bg-info text-white mb-2 p-2">Model Data: {{ jsonProduct }}</div>
+
+  <!--    novalidate: not to use the browser native validation feature -->
+  <form novalidate #form="ngForm" (ngSubmit)="submitForm(form)">
+
+    <div class="bg-danger text-white p-2 mb-2" *ngIf="formSubmitted && form.invalid">
+      There are problems with the form
+      <ul>
+        <li *ngFor="let error of getFormValidationMessages(form)">
+          {{ error }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label>Name</label>
+
+      <!--  #name="ngModel"                template reference variable-->
+      <input class="form-control"
+             [(ngModel)]="newProduct.name"
+             name="name"
+             #name="ngModel"
+             required
+             minlength="5"
+             pattern="^[A-Za-z ]+$"/>
+      <ul class="text-danger list-unstyled" *ngIf="name.invalid && (name.dirty || name.touched)">
+        <li *ngIf="name.errors.required">
+          You must enter a product name
+        </li>
+        <div *ngIf="name.hasError('required')">Name is required ......</div>
+        <li *ngIf="name.errors.pattern">
+          Product names can only contain letters and spaces
+        </li>
+        <li *ngIf="name.errors.minlength">
+          Product names must be at least {{ name.errors.minlength.requiredLength }} characters
+        </li>
+        <div *ngIf="name.hasError('minlength')">Name is minlength ......</div>
+      </ul>
+      <ul class="text-danger list-unstyled"
+          *ngIf="(formSubmitted || name.dirty) && name.invalid">
+        <li *ngFor="let error of getValidationMessages(name)">
+          {{ error }}
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <input class="form-control" name="category" [(ngModel)]="newProduct.category"/>
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input class="form-control" name="price" [(ngModel)]="newProduct.price"/>
+    </div>
+    <!--    <button class="btn btn-primary" (click)="addProduct(newProduct)">Create</button>-->
+    <button class="btn btn-primary" type="submit"
+            [disabled]="form.invalid"
+            [class.btn-secondary]="form.invalid">Create
+    </button>
+  </form>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
