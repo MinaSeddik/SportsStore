@@ -20,6 +20,13 @@ import {MyTableComponent} from "./products/mytable/mytable.component";
 import {CategoryCountComponent} from "./products/category-count/category-count.component";
 import {ProductCountComponent} from "./products/product-count/product-count.component";
 import {ModelResolver} from "./model/ model.resolver";
+import {NgxBootstrapComponent} from "./ngx-bootstrap/ngx-bootstrap.component";
+import {TooltipsComponent} from "./ngx-bootstrap/tooltips/tooltips.component";
+import {DatepickerComponent} from "./ngx-bootstrap/datepicker/datepicker.component";
+import {ModalComponent} from "./ngx-bootstrap/modal/modal.component";
+import {Modal2Component} from "./ngx-bootstrap/modal2/modal2.component";
+import {GalleryComponent} from "./gallery/gallery.component";
+import {DisplayEnvComponent} from "./display-env/display-env.component";
 
 const childRoutes: Routes = [
   {
@@ -32,6 +39,18 @@ const childRoutes: Routes = [
   }
 ];
 
+const ngxBootStrapRoutes: Routes = [
+  {
+    path: "",
+    children: [
+      {path: "tooltip", component: TooltipsComponent},
+      {path: "modal", component: ModalComponent},
+      {path: "modal2", component: Modal2Component},
+      {path: "datepicker", component: DatepickerComponent},
+      // {path: "", component: NgxBootstrapComponent}
+    ]
+  }
+];
 
 export const routes: Routes = [
 
@@ -94,6 +113,11 @@ export const routes: Routes = [
   // },
   {path: "table", component: MyTableComponent, children: childRoutes},
   {path: "table/:category", component: MyTableComponent, children: childRoutes},
+
+
+  {path: "ngx-bootstrap", component: NgxBootstrapComponent, children: ngxBootStrapRoutes},
+  {path: "gallery", component: GalleryComponent},
+  {path: "show-env", component: DisplayEnvComponent},
 
 
   // otherwise

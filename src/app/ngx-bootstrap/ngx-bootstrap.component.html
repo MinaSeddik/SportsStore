@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+  <h1>Ng Bootstrap and Ngx Bootstrap tutorials</h1>
+
+  <div class="row">
+    <div class="col-2 p-2">
+      <div class="d-grid gap-2">
+        <button class="btn btn-block btn-primary m-t-3" routerLink="tooltip"
+                [routerLinkActive]="'active'">
+          Tooltips
+        </button>
+
+        <button class="btn btn-block btn-primary m-t-3" routerLink="modal"
+                [routerLinkActive]="'active'">
+          Modal (Ngx Bootstrap)
+        </button>
+
+        <button class="btn btn-block btn-primary m-t-3" routerLink="modal2"
+                [routerLinkActive]="'active'">
+          Modal (Ng Bootstrap)
+        </button>
+
+        <button class="btn btn-block btn-primary m-t-3" routerLink="datepicker"
+                [routerLinkActive]="'active'">
+          Datepicker
+        </button>
+
+
+        <hr/>
+
+
+        <br/>
+        <br/>
+        <br/>
+      </div>
+    </div>
+    <div class="col-10 p-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

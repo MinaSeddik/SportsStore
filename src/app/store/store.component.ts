@@ -6,6 +6,7 @@ import {CounterDirective} from "./counter.directive";
 import {Cart} from "../model/cart.model";
 import {CartSummaryComponent} from "./cart-summary.component";
 import {Router, RouterLink} from "@angular/router";
+import {TooltipModule} from "ngx-bootstrap/tooltip";
 
 @Component({
   selector: 'store',

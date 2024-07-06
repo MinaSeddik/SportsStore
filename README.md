@@ -13,6 +13,8 @@ The `--legacy-peer-deps` flag was introduced with v7 as a way to bypass peerDepe
 
 ng new project-name
 ng add @angular/pwa
+ng add @angular/material
+ng generate environments
 ng g component store/new-component
 ng g component store
 ng g directive my-directive-name 
@@ -33,6 +35,7 @@ ng generate resolver services/product
 
 npm run json
 ng serve --port 3000 --open
+ng build
 ng build --configuration production
 ng build --configuration staging
 

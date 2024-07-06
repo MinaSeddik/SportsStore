@@ -1,0 +1,106 @@
+/*https://plnkr.co/edit/VTZzbaiCucHMGTC72miH?p=preview&preview*/
+
+
+/*.customClass{*/
+/*  background-color: purple;*/
+/*}*/
+
+
+/*/deep/ .tooltip-inner {*/
+/*  width: 140px;*/
+/*  max-width: 140px;*/
+/*  font-size: 14px;*/
+/*  color: #481125;*/
+/*  background-color: #f6c9da;*/
+/*  box-shadow: 0 5px 7px 0 rgb(47, 255, 0);*/
+/*  border: solid 1px rgb(197, 21, 21);*/
+/*  text-align: left;*/
+
+/*  &:before {*/
+/*    border: none;*/
+/*  }*/
+/*}*/
+
+/deep/ .customClass.tooltip .tooltip-inner {
+  width: 300px !important;
+  max-width: 300px !important;
+
+  font-size: 14px;
+  color: #481125;
+  background-color: #f6c9da;
+  box-shadow: 0 5px 7px 0 rgb(129, 73, 73);
+  border: solid 1px rgb(197, 21, 21);
+  text-align: left;
+}
+
+
+.btn-mycolor {
+  /*color: #212529;*/
+  color: #3a310e;
+  background-color: #7cc;
+  border-color: #5bc2c2
+}
+
+.btn-mycolor:hover {
+  color: #212529;
+  background-color: #52bebe;
+  border-color: #8ad3d3
+}
+
+.btn-mycolor:focus,
+.btn-mycolor.focus {
+  box-shadow: 0 0 0 .2rem rgba(91, 194, 194, 0.5)
+}
+
+.btn-mycolor.disabled,
+.btn-mycolor:disabled {
+  color: #212529;
+  background-color: #7cc;
+  border-color: #5bc2c2
+}
+
+.btn-mycolor:not(:disabled):not(.disabled):active,
+.btn-mycolor:not(:disabled):not(.disabled).active,
+.show>.btn-mycolor.dropdown-toggle {
+  color: #212529;
+  background-color: #9cdada;
+  border-color: #2e7c7c
+}
+
+.btn-mycolor:not(:disabled):not(.disabled):active:focus,
+.btn-mycolor:not(:disabled):not(.disabled).active:focus,
+.show>.btn-mycolor.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem rgba(91, 194, 194, 0.5)
+}
+
+.btn-outline-mycolor {
+  color: #7cc;
+  background-color: transparent;
+  background-image: none;
+  border-color: #7cc
+}
+
+.btn-outline-mycolor:hover {
+  color: #222;
+  background-color: #8ad3d3;
+  border-color: #7cc
+}
+
+.btn-outline-mycolor:focus,
+.btn-outline-mycolor.focus {
+  box-shadow: 0 0 0 .2rem rgba(119, 204, 204, 0.5)
+}
+
+.btn-outline-mycolor.disabled,
+.btn-outline-mycolor:disabled {
+  color: #7cc;
+  background-color: transparent
+}
+
+.btn-outline-mycolor:not(:disabled):not(.disabled):active,
+.btn-outline-mycolor:not(:disabled):not(.disabled).active,
+.show>.btn-outline-mycolor.dropdown-toggle {
+  color: #212529;
+  background-color: #8ad3d3;
+  border-color: #7cc
+}
