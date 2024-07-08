@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, delay, map, Observable, throwError} from "rxjs";
 import {Product} from "./product.model";
 import {Order} from "./order.model";
+import {environment} from "../../environments/environment";
 
 const PROTOCOL = "http";
 const PORT = 3500;
@@ -16,6 +17,7 @@ export class RestDatasource {
   baseUrl: string;
   auth_token: string | null;
 
+  baseUrl2: string = environment.baseUrl;
   private readonly http: HttpClient = inject(HttpClient);
 
   // private readonly url: unknown = inject(REST_URL);
