@@ -1,0 +1,21 @@
+
+  <p-autoComplete
+    [(ngModel)]="selectedItem"
+    [suggestions]="suggestions"
+    (completeMethod)="search($event)" />
+
+
+<br/>
+<br/>
+<br/>
+
+  <p-autoComplete
+    [(ngModel)]="selectedItem"
+    [virtualScroll]="true"
+    [suggestions]="filteredItems"
+    [virtualScrollItemSize]="34"
+    (completeMethod)="filterItems($event)"
+    field="label"
+    [dropdown]="true" />
+
+<br/>

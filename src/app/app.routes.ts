@@ -27,6 +27,11 @@ import {ModalComponent} from "./ngx-bootstrap/modal/modal.component";
 import {Modal2Component} from "./ngx-bootstrap/modal2/modal2.component";
 import {GalleryComponent} from "./gallery/gallery.component";
 import {DisplayEnvComponent} from "./display-env/display-env.component";
+import {MaterialComponent} from "./material/material.component";
+import {ButtonsComponent} from "./material/buttons/buttons.component";
+import {PrimeNgComponent} from "./prime-ng/prime-ng.component";
+import {AutoCompleteComponent} from "./prime-ng/auto-complete/auto-complete.component";
+import {ChartjsComponent} from "./chartjs/chartjs.component";
 
 const childRoutes: Routes = [
   {
@@ -48,6 +53,24 @@ const ngxBootStrapRoutes: Routes = [
       {path: "modal2", component: Modal2Component},
       {path: "datepicker", component: DatepickerComponent},
       // {path: "", component: NgxBootstrapComponent}
+    ]
+  }
+];
+
+const ngMaterialRoutes: Routes = [
+  {
+    path: "",
+    children: [
+      {path: "buttons", component: ButtonsComponent},
+    ]
+  }
+];
+
+const primeNgRoutes: Routes = [
+  {
+    path: "",
+    children: [
+      {path: "auto-complete", component: AutoCompleteComponent},
     ]
   }
 ];
@@ -118,6 +141,9 @@ export const routes: Routes = [
   {path: "ngx-bootstrap", component: NgxBootstrapComponent, children: ngxBootStrapRoutes},
   {path: "gallery", component: GalleryComponent},
   {path: "show-env", component: DisplayEnvComponent},
+  {path: "material", component: MaterialComponent, children: ngMaterialRoutes},
+  {path: "primeng", component: PrimeNgComponent, children: primeNgRoutes},
+  {path: "chartjs", component: ChartjsComponent},
 
 
   // otherwise
