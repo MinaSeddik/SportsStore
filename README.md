@@ -33,6 +33,9 @@ The `--legacy-peer-deps` flag was introduced with v7 as a way to bypass peerDepe
 * ng g service services/discount
 * ng generate resolver services/product 
 * ng g interceptor interceptors/logging --skip-tests
+* ng generate class "core (project-structure)"/model/employee --type=model
+* ng generate enum "core (project-structure)"/enums/sex
+* 
 
 1. [ ] npm run json
 2. [ ] ng serve --port 3000 --open
