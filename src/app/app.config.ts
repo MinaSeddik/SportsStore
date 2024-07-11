@@ -1,17 +1,10 @@
-import {ApplicationConfig, provideZoneChangeDetection, isDevMode, importProvidersFrom} from '@angular/core';
-import { provideRouter } from '@angular/router';
+import {ApplicationConfig, importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
+import {provideRouter} from '@angular/router';
 
-import { routes } from './app.routes';
-import {
-  HttpFeature,
-  HttpFeatureKind,
-  HttpHandler,
-  HttpInterceptorFn,
-  provideHttpClient,
-  withInterceptors
-} from "@angular/common/http";
+import {routes} from './app.routes';
+import {HttpInterceptorFn, provideHttpClient, withInterceptors} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {loggingInterceptor} from "./interceptors/logging.interceptor";
 import {headersInterceptor} from "./interceptors/headers-interceptor.interceptor";
 import {httpErrorInterceptor} from "./interceptors/http-error.interceptor";
@@ -25,7 +18,7 @@ let interceptors: Array<HttpInterceptorFn> = environment.production ?
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(routes),
 
     // http client
@@ -33,10 +26,16 @@ export const appConfig: ApplicationConfig = {
       // registering interceptors
       // withInterceptors([headersInterceptor, authInterceptor, loggingInterceptor, httpErrorInterceptor])
       withInterceptors(interceptors)
-
     ),
 
     importProvidersFrom([BrowserAnimationsModule]),
     provideAnimationsAsync(),
+
+
+    // {provide: 'googleTagManagerId', useValue: 'GTM-TPXJZVB3'}
+    {provide: 'googleTagManagerId', useValue: 'GTM-W7KDTDLX'}
+
+
   ]
 };
+

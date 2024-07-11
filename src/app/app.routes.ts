@@ -32,6 +32,7 @@ import {ButtonsComponent} from "./material/buttons/buttons.component";
 import {PrimeNgComponent} from "./prime-ng/prime-ng.component";
 import {AutoCompleteComponent} from "./prime-ng/auto-complete/auto-complete.component";
 import {ChartjsComponent} from "./chartjs/chartjs.component";
+import {GoogleTagManagerComponent} from "./google-tag-manager/google-tag-manager.component";
 
 const childRoutes: Routes = [
   {
@@ -144,6 +145,7 @@ export const routes: Routes = [
   {path: "material", component: MaterialComponent, children: ngMaterialRoutes},
   {path: "primeng", component: PrimeNgComponent, children: primeNgRoutes},
   {path: "chartjs", component: ChartjsComponent},
+  {path: "gtm", component: GoogleTagManagerComponent},
 
 
   // otherwise

@@ -17,7 +17,7 @@
                 [class.active]="cat === selectedCategory" (click)="changeCategory(cat)">
           {{ cat }}
         </button>
-        <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">
+        <button id="admin_btn" class="btn btn-block btn-danger m-t-3" routerLink="/admin">
           Admin
         </button>
 
@@ -85,6 +85,13 @@
         <button class="btn btn-block btn-primary m-t-3" routerLink="/chartjs">
           Charjs
         </button>
+
+        <hr/>
+
+        <button class="btn btn-block btn-dark m-t-3" routerLink="/gtm">
+          Google Tag Manager events (GTM and GA4)
+        </button>
+
 
         <br/>
         <br/>
