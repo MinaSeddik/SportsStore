@@ -33,6 +33,7 @@ import {PrimeNgComponent} from "./prime-ng/prime-ng.component";
 import {AutoCompleteComponent} from "./prime-ng/auto-complete/auto-complete.component";
 import {ChartjsComponent} from "./chartjs/chartjs.component";
 import {GoogleTagManagerComponent} from "./google-tag-manager/google-tag-manager.component";
+import {RouteWithParameterComponent} from "./route-with-parameter/route-with-parameter.component";
 
 const childRoutes: Routes = [
   {
@@ -146,7 +147,7 @@ export const routes: Routes = [
   {path: "primeng", component: PrimeNgComponent, children: primeNgRoutes},
   {path: "chartjs", component: ChartjsComponent},
   {path: "gtm", component: GoogleTagManagerComponent},
-
+  {path: "route-param", component: RouteWithParameterComponent},
 
   // otherwise
   {path: "", component: StoreComponent, canActivate: [StoreFirstGuard]},

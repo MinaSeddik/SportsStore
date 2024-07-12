@@ -1,0 +1,36 @@
+<h3> Required Routing Parameters: </h3>
+<img width="600px" src="images/navigate1.png" alt=""/>
+
+<hr>
+
+<h3> Route Optional Parameters: </h3>
+<img width="600px" src="images/navigate2.png" alt=""/>
+
+<hr>
+
+<h3> Route Query Parameters: </h3>
+<img width="600px" src="images/navigate3.png" alt=""/>
+
+
+<hr>
+
+<h3> To prevent navigation to "/details/123" with browser back button </h3>
+
+from item at /details/123 to item at /details/456
+
+<pre [innerHtml]="'this.router.navigate([\'/details/456\'], { replaceUrl: true });' | safeHtml">
+</pre>
+
+then the back button will not return back to /details/123
+
+
+<hr>
+
+<br />
+<br />
+
+<div style="height: 100px;"></div>
+<br />
+<br />
+<br />
+<br />

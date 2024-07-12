@@ -39,9 +39,10 @@ The `--legacy-peer-deps` flag was introduced with v7 as a way to bypass peerDepe
 
 1. [ ] npm run json
 2. [ ] ng serve --port 3000 --open
-3. [ ] ng build
-4. [ ] ng build --configuration production
-5. [ ] ng build --configuration staging
+3. [ ] ng serve --proxy-config ./src/proxy.conf.json
+4. [ ] ng build
+5. [ ] ng build --configuration production
+6. [ ] ng build --configuration staging
 
 
 
