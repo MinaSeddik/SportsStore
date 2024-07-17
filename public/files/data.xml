@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <data>
+    There is no definitive list of the file types you would want to gzip. Any file type readable as plain text (i.e. non-binary files) are able to be gzipped, and so a "definitive" list would be massive. Therefore, it ultimately depends on which file types you are actually serving, which you can check for any given file via the HTTP Content-Type header.
+  </data>
+</root>

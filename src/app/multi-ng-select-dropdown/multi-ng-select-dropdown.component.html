@@ -1,0 +1,35 @@
+<h2> ng-select </h2>
+
+<ng-select
+  [items]="people"
+  [multiple]="true"
+  bindLabel="name"
+  bindValue="id"
+  [closeOnSelect]="false"
+  [(ngModel)]="selectedPeople"
+  (change)="itemSelected($event)"
+>
+
+  <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+    <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" />
+    {{ item.gender | uppercase }}
+  </ng-template>
+
+<!--  <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">-->
+<!--    <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.name }}-->
+<!--  </ng-template>-->
+
+<!--  <ng-template ng-label-tmp let-item="item">-->
+<!--    <img height="15" width="15" [src]="item.avatar" />-->
+<!--    {{ item.name }}-->
+<!--  </ng-template>-->
+
+</ng-select>
+
+<br />
+<small>{{ selectedPeople | json }}</small>
+
+
+
+
+

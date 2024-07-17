@@ -34,6 +34,9 @@ import {AutoCompleteComponent} from "./prime-ng/auto-complete/auto-complete.comp
 import {ChartjsComponent} from "./chartjs/chartjs.component";
 import {GoogleTagManagerComponent} from "./google-tag-manager/google-tag-manager.component";
 import {RouteWithParameterComponent} from "./route-with-parameter/route-with-parameter.component";
+import {MultiSelectDropdownComponent} from "./multi-select-dropdown/multi-select-dropdown.component";
+import {MultiNgSelectDropdownComponent} from "./multi-ng-select-dropdown/multi-ng-select-dropdown.component";
+import {PdfDownloadComponent} from "./pdf-download/pdf-download.component";
 
 const childRoutes: Routes = [
   {
@@ -146,8 +149,11 @@ export const routes: Routes = [
   {path: "material", component: MaterialComponent, children: ngMaterialRoutes},
   {path: "primeng", component: PrimeNgComponent, children: primeNgRoutes},
   {path: "chartjs", component: ChartjsComponent},
+  {path: "pdf", component: PdfDownloadComponent},
   {path: "gtm", component: GoogleTagManagerComponent},
   {path: "route-param", component: RouteWithParameterComponent},
+  {path: "multi-select-dropdown", component: MultiSelectDropdownComponent},
+  {path: "ng-select", component: MultiNgSelectDropdownComponent},
 
   // otherwise
   {path: "", component: StoreComponent, canActivate: [StoreFirstGuard]},

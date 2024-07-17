@@ -1,0 +1,51 @@
+<h2>PDF file Download to test Nginx server compression</h2>
+
+<br/>
+
+<a class="btn btn-block btn-primary m-t-3"
+   href="/files/ProAngular6.pdf" target="_blank">
+  Download PDF file (check compression)
+</a>
+
+<br/>
+
+<a class="btn btn-block btn-primary m-t-3"
+   href="/files/data.xml" target="_blank">
+  Download xml file <br> (check compression)
+</a>
+
+<br/>
+<br/>
+<button class="btn btn-block btn-primary m-t-3" (click)="downloadPdfFile()">
+  Download PDF file (check compression)
+</button>
+
+<br/>
+<br/>
+
+<hr/>
+
+<h4>Without compression configured on the server (using curl)</h4>
+<pre>
+  curl -v 'http://localhost:4200/files/ProAngular6.pdf'
+*   Trying 127.0.0.1:4200...
+* TCP_NODELAY set
+* Connected to localhost (127.0.0.1) port 4200 (#0)
+> GET /files/ProAngular6.pdf HTTP/1.1
+> Host: localhost:4200
+> User-Agent: curl/7.68.0
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Access-Control-Allow-Origin: *
+< Content-Length: 19378212
+< Content-Type: application/pdf
+< Last-Modified: Wed, 17 Jul 2024 11:58:19 GMT
+< ETag: W/"19378212-1721217499155"
+< Cache-Control: no-cache
+< Date: Wed, 17 Jul 2024 12:07:18 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+
+</pre>
